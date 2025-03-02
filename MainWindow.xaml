@@ -1,12 +1,31 @@
-﻿<Window x:Class="LakokWPF.MainWindow"
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="LakokWPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:LakokWPF"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="LakokWPF" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="200" />
+        </Grid.ColumnDefinitions>
+
+        <DataGrid Name="dgLakok" AutoGenerateColumns="True" Margin="10" Grid.Column="0" SelectionMode="Single"/>
+
+        <StackPanel Grid.Column="1" Margin="10">
+            <TextBlock Text="Nev:" Margin="0,0,0,5"/>
+            <TextBox Name="tbNev" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Cím:" Margin="0,0,0,5"/>
+            <TextBox Name="tbCim" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Lakók száma:" Margin="0,0,0,5"/>
+            <TextBox Name="tbLakokSzama" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Alapterület:" Margin="0,0,0,5"/>
+            <TextBox Name="tbTerulet" Margin="0,0,0,10"/>
+
+            <Button Content="Bevitel" Name="btnBevitel" Click="btnBevitel_Click" Margin="0,0,0,10"/>
+            <Button Content="Kiegyenlítés" Name="btnKiegyenlites" Click="btnKiegyenlites_Click"/>
+        </StackPanel>
     </Grid>
 </Window>
